@@ -1,6 +1,116 @@
-body{
-    background-color: rgb(24, 19, 57);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap');
+
+:root {
+  --background-color: #f9f9fb;
+  --Tree-bg-color: #162533;
+  --Tree-text-color: #ecf0f1;
+  --file-bg-hover: #34495e;
+  --file-text-hover: #ecf0f1;
+  --editor-bg-color: #ffffffaf;
+  --editor-border-color: #162533;
+  --accent-color: #3442db;
+  --file-selected-bg: #2582c0;
 }
-/* input , button{
-    font-family: 'Protest Guerrilla' system-ui;
-} */
+
+*{
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+}
+
+#title{
+  text-align: center;
+  border: 1.2px solid black;
+  border-radius: 8px;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.file-tree {
+  width: 30%;
+  background-color: var(--Tree-bg-color);
+  color: var(--Tree-text-color);
+  padding: 15px;
+  border-right: 1px solid var(--editor-border-color);
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.file-editor {
+  width: 70%;
+  background-color: var(--editor-bg-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.file-para{
+  text-align:center;
+  font-size: 1.42rem;
+}
+
+.editor {
+  background-color: var(--editor-bg-color);
+  border: 1px solid var(--editor-border-color);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  flex-grow: 1;
+}
+
+.editor h2 {
+  color: var(--accent-color);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.editor pre {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: monospace;
+  color: #333;
+}
+
+.file-tree ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-tree li {
+  margin: 5px 0;
+}
+
+.file-item {
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.file-item:hover {
+  background-color: var(--file-bg-hover);
+  color: var(--file-text-hover);
+}
+
+.file-item.selected {
+  background-color: var(--file-selected-bg);
+  color: var(--file-text-hover);
+}
+
+.file-item.folder {
+  font-weight: 600;
+}
+.file-item.file {
+  font-weight: 100;
+}
